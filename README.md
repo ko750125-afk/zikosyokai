@@ -45,14 +45,14 @@ python -m http.server 8080
 
 ## GitHub Pages에 배포
 
-이 저장소는 [`.github/workflows/pages.yml`](.github/workflows/pages.yml)로 **GitHub Actions**에서 Pages에 올라갑니다.
+**브랜치에서 직접 배포**하는 방식이 가장 단순합니다(정적 `index.html` + `.nojekyll`).
 
-1. **한 번만:** [zikosyokai 설정 → Pages](https://github.com/ko750125-afk/zikosyokai/settings/pages)에서 **Build and deployment**의 **Source**를 **GitHub Actions**로 선택합니다.
-2. `main`에 푸시하면 워크플로가 돌고, 완료 후 사이트 URL은 설정 상단에 표시됩니다. (형식: `https://ko750125-afk.github.io/zikosyokai/`)
+1. [zikosyokai → Settings → Pages](https://github.com/ko750125-afk/zikosyokai/settings/pages) 를 연다.  
+2. **Build and deployment** → **Source**를 **Deploy from a branch** 로 바꾼다. (지금 “GitHub Actions”로 돼 있으면 반드시 여기로 바꾼다.)  
+3. **Branch:** `main`, **Folder:** `/ (root)` → **Save**.  
+4. 1~2분 뒤 사이트: `https://ko750125-afk.github.io/zikosyokai/`
 
-**Source를 “branch”로만 쓰고 싶다면:** Actions 대신 **Deploy from a branch** → `main` / **/(root)** 를 선택해도 됩니다(루트에 `index.html`이 있음).
-
-4. Jekyll이 개입하는 경우 루트 **`.nojekyll`**(이미 포함)로 끕니다.
+`main`에 푸시할 때마다 Pages가 갱신된다. (이전에 쓰던 **GitHub Actions**용 `pages.yml`은 제거함 — Actions/브랜치를 동시에 쓰면 헷갈리고, 프로젝트 사이트는 브랜치 배포가 안정적이다.)
 
 ## 수정할 곳
 
