@@ -43,12 +43,16 @@ python -m http.server 8080
 
 `http://localhost:8080` 로 접속합니다.
 
-## GitHub Pages에 배포할 때
+## GitHub Pages에 배포
 
-1. 이 폴더(또는 저장소 루트)를 푸시합니다.
-2. 저장소 **Settings → Pages**에서 소스를 선택합니다(예: `main` 브랜치 `/ (root)` 또는 `docs` 폴더만 사용하는 경우).
-3. **Project Pages**(`https://<user>.github.io/<repo>/`)로 올릴 때도 CSS/JS는 상대 경로이므로 추가 설정 없이 동작하는 것이 일반적입니다. 깨질 때만 [GitHub Pages 문서](https://docs.github.com/pages)의 base URL을 확인하세요.
-4. Jekyll이 정적 자산을 가로채는 이슈가 있으면 루트의 빈 **`.nojekyll`** 파일이 Jekyll 빌드를 끕니다(이미 포함됨).
+이 저장소는 [`.github/workflows/pages.yml`](.github/workflows/pages.yml)로 **GitHub Actions**에서 Pages에 올라갑니다.
+
+1. **한 번만:** [zikosyokai 설정 → Pages](https://github.com/ko750125-afk/zikosyokai/settings/pages)에서 **Build and deployment**의 **Source**를 **GitHub Actions**로 선택합니다.
+2. `main`에 푸시하면 워크플로가 돌고, 완료 후 사이트 URL은 설정 상단에 표시됩니다. (형식: `https://ko750125-afk.github.io/zikosyokai/`)
+
+**Source를 “branch”로만 쓰고 싶다면:** Actions 대신 **Deploy from a branch** → `main` / **/(root)** 를 선택해도 됩니다(루트에 `index.html`이 있음).
+
+4. Jekyll이 개입하는 경우 루트 **`.nojekyll`**(이미 포함)로 끕니다.
 
 ## 수정할 곳
 
